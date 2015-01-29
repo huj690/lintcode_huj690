@@ -28,11 +28,9 @@ public:
         }
         int begin = 0, end = nums.size() - 1;
         int k_index = nums.size() - k;
-        while (1) {
-            int pos = partition(nums, begin, end);
-            if (k_index == pos) {
-                break;
-            }
+        int pos = -1;
+        while (k_index != pos) {
+            pos = partition(nums, begin, end);
             if (k_index < pos) {
                 end = pos - 1;
             } else {
@@ -66,3 +64,4 @@ private:
         return i;
     }
 };
+

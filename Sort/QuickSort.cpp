@@ -1,9 +1,11 @@
 class Solution {
 public:
-  void qsort(vector<int> &num) {
-    int index = partition(num, 0, num.size() - 1);
-    partition(num, 0, index - 1);
-    partition(num, index + 1, num.size() - 1);
+  void qsort(vector<int> &num, int begin, int end) {
+	  if (begin < end) {
+        int index = partition(num, begin, end);
+        qsort(num, begin, index - 1);
+        qsort(num, index + 1, end);
+	  }
   }
   
 private:
@@ -29,6 +31,5 @@ private:
     num[i] = key;
     return i;
   }
-
 
 };

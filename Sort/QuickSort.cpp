@@ -2,9 +2,9 @@ class Solution {
 public:
   void qsort(vector<int> &num, int begin, int end) {
 	  if (begin < end) {
-        int index = partition(num, begin, end);
-        qsort(num, begin, index - 1);
-        qsort(num, index + 1, end);
+	  	int index = partition(num, begin, end);
+	  	qsort(num, begin, index - 1);
+	  	qsort(num, index + 1, end);
 	  }
   }
   
